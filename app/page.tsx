@@ -1,8 +1,15 @@
 "use client";
 
+import { useState } from "react";
+import routes from "./routes";
 import Input from "./components/Input";
 
 const Home = () => {
+  const [data, setData] = useState({});
+  const [location, setLocation] = useState('');
+  const [error, setError] = useState('');
+
+  const url = routes.getDataUrl(location);
   return (
   <div className="bg-cover bg-gradient-to-r from-sky-900 to-sky-700 h-screen">
       <div className="bg-white/25 w-full rounded-lg flex flex-col h-fit">
