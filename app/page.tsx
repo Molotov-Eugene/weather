@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import routes from "./routes";
+import Head from 'next/head'
 
 //Components
 
@@ -50,7 +51,7 @@ const Home = () => {
       <div className="text-sky-200 text-center h-screen mt-[5rem]">
         <p className="text-3xl font-semibold mb-4">{error}</p>
         <p className="text-xl">Enter a Valid City</p>
-    </div>);
+      </div>);
   } else {
     content = (
       <>
@@ -66,19 +67,23 @@ const Home = () => {
   }
 
   return (
-    // <div className="bg-cover bg-gradient-to-r from-sky-900 to-sky-700 h-full">
-    <div className="bg-[url('./img/bg.jpg')] bg-cover h-full">
-      <div className="bg-white/25 w-full rounded-lg flex flex-col h-full">
-        {/* INPUT AND LOGO */}
-        <div className="flex flex-col md:flex-row justify-between items-center p-12">
-          <Input handleSearch={handleSearch} setLocation={setLocation} />
-          <h1 className="mb-8 md:mb-0 order-1 text-sky-200 py-2 px-4 rounded-xl italic font-bold">
-            Weather App
-          </h1>
+    <React.Fragment>
+      <Head>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+      </Head>
+      <div className="bg-[url('./img/bg.jpg')] bg-cover h-full">
+        <div className="bg-white/25 w-full rounded-lg flex flex-col h-full">
+          {/* INPUT AND LOGO */}
+          <div className="flex flex-col md:flex-row justify-between items-center p-12">
+            <Input handleSearch={handleSearch} setLocation={setLocation} />
+            <h1 className="mb-8 md:mb-0 order-1 text-sky-200 py-2 px-4 rounded-xl italic font-bold">
+              Weather App
+            </h1>
+          </div>
+          {content}
         </div>
-        {content}
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 
