@@ -15,9 +15,6 @@ const Home = () => {
 
   const url = routes.getDataUrl(location);
 
-  const makeCard = () => data.current ?
-    (<div>{data.current.temp_c}</div>) : null;
-
   const handleSearch = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       e.preventDefault()
@@ -49,19 +46,19 @@ const Home = () => {
   } else {
     content = (
       <>
-        <div>
-          <Current data={data.current}/>
-          <WeekForecast />
+        <div className="flex md:flex-row flex-col p-12 items-center justify-between">
+          <Current data={data} />
+          <WeekForecast data={data} />
         </div>
         <div>
-          <WeatherDetails />
+          <WeatherDetails data={data} />
         </div>
       </>
     )
   }
 
   return (
-    <div className="bg-cover bg-gradient-to-r from-sky-900 to-sky-700 h-screen">
+    <div className="bg-cover bg-gradient-to-r from-sky-900 to-sky-700 h-fit">
       <div className="bg-white/25 w-full rounded-lg flex flex-col h-fit">
         {/* INPUT AND LOGO */}
         <div className="flex flex-col md:flex-row justify-between items-center p-12">
