@@ -22,18 +22,19 @@ const Home = () => {
     if (e.key === "Enter") {
       e.preventDefault()
       try {
-        console.log(url)
+        // console.log(url)
         const response = await axios.get(url);
-        if (response.statusText !== 'OK') {
+        // console.log(response)
+        if (response.status !== 200) {
           throw new Error('new error');
         }
         const data = await response.data;
         setData(data);
         setLocation('')
         setError('')
-        console.log(data)
+        // console.log(data)
       } catch (error) {
-        console.warn(error)
+        // console.warn(error)
         setError('City Not Found')
         setData({})
       }
