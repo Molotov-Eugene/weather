@@ -34,7 +34,6 @@ const Home = () => {
         console.log(data)
       } catch (error) {
         console.warn(error)
-        console.log(error.message)
         setError('City Not Found')
         setData({})
       }
