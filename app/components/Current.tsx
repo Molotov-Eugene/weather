@@ -18,7 +18,7 @@ interface CurrrentProps {
 }
 
 const Current = ({ data }: CurrrentProps) => {
-  const weatherIcon = data.current ? data.current.condition.icon : null;
+  const weatherIcon = data.current ? data.current.condition.icon : undefined;
   return (
     <>
       <div className="flex flex-col mb-8 md:mb-0 items-start gap-2 w-1/2">
