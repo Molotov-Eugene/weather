@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import routes from "./routes";
-import Head from 'next/head'
+import Head from 'next/head';
 
 //Components
 
@@ -72,7 +72,7 @@ const Home = () => {
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </Head>
       <div className="bg-[url('./img/bg.jpg')] bg-cover h-full">
-        <div className="bg-white/25 w-full rounded-lg flex flex-col h-full">
+        <div className="bg-white/25 w-full flex flex-col h-full">
           {/* INPUT AND LOGO */}
           <div className="flex flex-col md:flex-row justify-between items-center p-12">
             <Input handleSearch={handleSearch} setLocation={setLocation} />
