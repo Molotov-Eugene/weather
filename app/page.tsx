@@ -69,6 +69,7 @@ const Home = () => {
   return (
     <React.Fragment>
       <Head>
+        <meta property="http-equiv:Content-Security-Policy" content="upgrade-insecure-requests" />
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </Head>
       <div className="bg-[url('./img/bg.jpg')] bg-cover h-full">
